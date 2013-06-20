@@ -18,7 +18,7 @@ You will get this prompt:
 
     user=>
 
-To use the functions in `core.clj` and the ciphertexts stored in `ciphertexts.clj` type these commands: [^fn-1]
+To use the functions in `core.clj` and the ciphertexts stored in `ciphertexts.clj` type these commands [1]:
 
     user=> (require '[codebreaker.core :as cb])
     nil
@@ -41,7 +41,7 @@ From there you can make a candidate key by XOR-ing it with a plaintext string th
       #_=> (cb/unhexify ct1))
     (114 52 33 133 219 208 216 211 150 98 51 101 207 47 128 17 37 251 197 117 179 61 251 46 242 39 48 142 218 55 216 16 44 173 63 218)
 
-Once you have made a candidate key, you can test it against the ciphertexts: [^fn-2]
+Once you have made a candidate key, you can test it against the ciphertexts [2]:
 
     user=> (cb/test-key
       #_=> '(114 52 33 133 219 208 216 211 150 98 51 101 207 47 128 17 37 251 197 117 179 61 251 46 242 39 48 142 218 55 216 16 44 173 63 218)
@@ -50,10 +50,10 @@ Once you have made a candidate key, you can test it against the ciphertexts: [^f
 
 Keep making and testing keys until you are satisfied that the target plaintext is correct.
 
-[^fn-1]: Ignore `nil`, this is what is returned by the REPL after each command.
+**Notes:**  
+[1]: Ignore `nil`, this is what is returned by the REPL after each command. "footnote"  
+[2]: Note that you must quote the key here (e.g., `'(114 ... 218)`), otherwise Clojure tries to read it as a list, which must start with a function.
 
-[^fn-2]: Note that you must quote the key here, otherwise Clojure tries to read it as a list (e.g., `''(114 ... 218)`).
+**Copyright © 2013 Christopher Devine**
 
-Copyright © 2013 Christopher Devine
-
-Distributed under the Eclipse Public License, the same as Clojure.
+**Distributed under the Eclipse Public License, the same as Clojure.**
