@@ -51,7 +51,7 @@ Once you have made a candidate key, you can test it against the ciphertexts [2]:
 Keep making and testing keys until you are satisfied that the target plaintext is correct.
 
 **Notes:**  
-[1]: Ignore `nil`, this is what is returned by the REPL after each command. "footnote"  
+[1]: Ignore `nil`, this is what is returned by the REPL after each command.  
 [2]: Note that you must quote the key here (e.g., `'(114 ... 218)`), otherwise Clojure tries to read it as a list, which must start with a function.
 
 **Copyright © 2013 Christopher Devine**
