@@ -10,3 +10,13 @@
 
 (defn make-key [pt-decimals ct-decimals]
 	(map bit-xor pt-decimals ct-decimals))
+
+(defn decimals->plaintext [decimals]
+	(apply str
+		(map char decimals)))
+
+(defn test-key [your-key ciphertext]
+	(decimals->plaintext
+		(map bit-xor
+			your-key
+      (unhexify ciphertext))))
